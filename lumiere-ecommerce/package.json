@@ -1,0 +1,18 @@
+{
+  "name": "lumiere-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lumière — Premium fullstack ecommerce platform (React + Vite + Express + MongoDB)",
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"bun run dev:server\" \"bun run dev:client\"",
+    "dev:client": "cd client && bun run dev",
+    "dev:server": "cd server && bun run dev",
+    "install:all": "bun install && cd client && bun install && cd ../server && bun install",
+    "seed": "cd server && bun run seed",
+    "build": "cd client && bun run build",
+    "lint": "cd client && bun run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
