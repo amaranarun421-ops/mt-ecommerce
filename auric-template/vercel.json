@@ -1,12 +1,7 @@
 {
-  "framework": "vite",
-  "buildCommand": "cd client && bun install && bun run build",
-  "outputDirectory": "client/dist",
   "installCommand": "bun install",
-  "devCommand": "cd client && bun run dev",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "buildCommand": "bun run build",
+  "devCommand": "bun run dev",
   "headers": [
     {
       "source": "/(.*)",
@@ -22,15 +17,21 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/(icon|logo)\\.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
-      "source": "/favicon.svg",
+      "source": "/robots.txt",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ]
